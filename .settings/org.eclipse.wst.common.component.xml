@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="AirlineReservationSystem">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="javax.faces.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/javax.faces/javax.faces">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="AirlineReservationSystem"/>
+        <property name="java-output-path" value="/AirlineReservationSystem/build/classes"/>
+    </wb-module>
+</project-modules>

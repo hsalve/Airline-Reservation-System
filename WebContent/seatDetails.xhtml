@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Register Page</title>
+</h:head>
+<h:body>
+
+	<h:dataTable value="#{user.keyList}" var="key">
+	   <h:column>    				
+	      <f:facet name="header">Seat No</f:facet>    				
+	      #{key}
+	   </h:column>
+	   <h:column>
+	      <f:facet name="header">isBooked</f:facet>
+	      #{user.seatMap[key].booked}
+	   </h:column>
+	   <h:column>
+	      <f:facet name="header">Seat Type</f:facet>
+	      #{user.seatMap[key].seatType}
+	   </h:column>
+	   <h:column>
+	      <f:facet name="header">Booked By</f:facet>
+	      #{user.seatMap[key].bookedBy}
+	   </h:column>
+	</h:dataTable>
+
+
+</h:body>
+</html>

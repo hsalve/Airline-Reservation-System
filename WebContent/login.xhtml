@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+	    <title>Login Page</title>
+	</h:head>
+	
+	<h:body>
+	<h1>Welcome to Airline Reservation System</h1>
+		<h:form>
+			<h:outputLabel value="Enter Your Username : " />
+			<h:inputText id="inputName" value="#{user.userName}"
+		                            required="true" requiredMessage="Name field must not be empty" />
+		    <br></br>
+		    <h:outputText value="Enter Your Password : " />
+		    <h:inputSecret id="inputPassword" value="#{user.password}"
+		                            required="true" requiredMessage="Password field must not be empty" />
+		     <br></br>
+		     <h:commandButton value="Sign In" action="#{user.login}" />
+		    <br></br> 
+		     <h:outputText value="Not a User " />
+		     <h:outputLink value="register.xhtml">Sign Up</h:outputLink>
+	     </h:form>                           
+	</h:body>
+
+</html>

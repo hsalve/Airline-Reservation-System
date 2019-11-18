@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Register Page</title>
+</h:head>
+<h:body>
+<h1> Welcome new User, Please Register below</h1>
+		<h:form>
+			<h:outputText value="Enter Your First Name:" />
+			<h:inputText id="fname" value="#{user.firstName}"
+                            required="true" requiredMessage="Please enter your first name" />
+            <br></br>
+            <h:message id="m1" for="fname" style="color:red"/>
+		    <br></br>
+            <br></br>               
+		    
+		    <h:outputText value="Enter Your Last Name:" />
+		    <h:inputText id="lname" value="#{user.lastName}"
+                            required="true" requiredMessage="Please enter your last name" />
+		    <br></br>
+		    <h:message id="m2" for="lname" style="color:red"/>
+		    <br></br>
+            <br></br>               
+		    
+		    <h:outputText value="Enter Your email ID:" />
+		    <h:inputText id="email" value="#{user.email}"
+                            required="true" requiredMessage="Please enter your email id" >
+                            <f:validator validatorId="emailValidator" />
+                            </h:inputText>
+                            
+            <br></br>
+            <h:message id="m3" for="email" style="color:red"/>
+            <br></br>
+            <br></br>               
+		    
+		    <h:outputText value="Enter Your Username" />
+			<h:inputText id="uname" value="#{user.userName}"
+                            required="true" label="UserName" requiredMessage="Please enter desired username">
+                            
+                              <f:validateLength maximum="12" minimum="6"/>
+                              <f:validator validatorId="usernameValidator" />
+                              </h:inputText>
+            <br></br>
+            <h:message id="m4" for="uname" style="color:red"/>
+		    <br></br>
+            <br></br>
+            
+		    <h:outputText value="Enter Password :" />
+		    <h:inputSecret id="psw" value="#{user.password}"
+                            required="true" label="Password" requiredMessage="Please enter your password" >
+             <f:validateLength maximum="12" minimum="6"/>    </h:inputSecret>         
+            <br></br>
+            <h:message id="m5" for="psw" style="color:red"/>
+		    <br></br>
+            <br></br>
+            
+            <h:outputText value="Select your User Status :" />                
+            <h:selectOneMenu value="#{user.status}">
+   			<f:selectItem itemValue="Luxury" itemLabel="Luxury - User" />
+   			<f:selectItem itemValue="Standard" itemLabel="Standard User" />
+   			</h:selectOneMenu>
+   			
+   			 
+            <br></br>
+            <h:message id="m6" for="userstatus" style="color:red"/>
+		    <br></br>
+            <br></br>
+            
+            <h:commandButton value="Register" action="#{user.add}" />                             	     
+		 </h:form>                           
+	</h:body>
+
+</html>

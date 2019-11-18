@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Admin Page</title>
+</h:head>
+<h:body>
+	<h:form>	 	
+		 <div>
+	 		Welcome Admin <h:outputText value="#{user.lastName}"></h:outputText> , <h:outputText value="#{user.firstName}"></h:outputText>
+		 </div>
+		 
+		 
+		 <div style="float: left;border: 2px solid black;">
+		    <ui:repeat value="#{user.keyList}" var="key" varStatus="loop">
+		         <h:outputText value="&lt;div style='float: left;'&gt;" escape="false" rendered="#{loop.index % 4 == 0}" />
+	    		
+	    		<h:outputText value="&lt;/div&gt;" escape="false" rendered="#{loop.last or (loop.index + 1) % 4 == 0}" />
+		    </ui:repeat>
+		</div>
+		
+		
+		
+		<div style="float: left;width: 100%;padding-top: 5px;">
+		
+			
+			<h:commandButton value="Seat Details" action="seatDetails"></h:commandButton>&nbsp;&nbsp;
+			<h:commandButton value="Log Out" action="#{user.logout}"></h:commandButton>&nbsp;&nbsp;
+		</div>
+		
+		
+	</h:form>	                   
+</h:body>
+
+</html>

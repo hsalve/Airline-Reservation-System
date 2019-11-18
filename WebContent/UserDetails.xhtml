@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Register Page</title>
+</h:head>
+<h:body>
+	<div style="float: left;width: 100%;padding-top: 5px;">
+			<h3>Booking Details:</h3>
+			First Name : #{user.firstName} <br></br>
+			Last Name : #{user.lastName} <br></br>
+			E-mail : #{user.email} <br></br>
+			Number of Seats : #{user.seatsReserved} <br></br>
+			Seats : #{user.seats}
+	</div>
+</h:body>
+</html>
